@@ -4,9 +4,72 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ServiceCenter"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        TextElement.Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
+        Background="{DynamicResource MaterialDesign.Brush.Background}"
+        Title="MainWindow" Height="720" Width="1280">
     <Grid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <TabControl Style="{StaticResource MaterialDesignFilledTabControl}"
+                    TabStripPlacement="Left"
+                    BorderThickness="0"
+                    x:Name="MainTabControl"
+                    SelectionChanged="MainTabControl_SelectionChanged"
+                    Grid.Column="0">
+            <TabItem Tag="Home">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal" Width="120">
+                        <materialDesign:PackIcon Kind="Home"
+                                                 Width="20" Height="20"
+                                                 Margin="0 0 10 0"/>
+                        <TextBlock Text="Главная"/>
+                    </StackPanel>
+                </TabItem.Header>
+            </TabItem>
+            <TabItem Tag="Orders">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal" Width="120">
+                        <materialDesign:PackIcon Kind="ClipboardOutline"
+                                                 Width="20" Height="20"
+                                                 Margin="0 0 10 0"/>
+                        <TextBlock Text="Заказы"/>
+                    </StackPanel>
+                </TabItem.Header>
+            </TabItem>
+            <TabItem Tag="Stats">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal" Width="120">
+                        <materialDesign:PackIcon Kind="ChartTimelineVariant"
+                                                 Width="20" Height="20"
+                                                 Margin="0 0 10 0"/>
+                        <TextBlock Text="Статистика"/>
+                    </StackPanel>
+                </TabItem.Header>
+            </TabItem>
+            <TabItem Tag="Clients">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal" Width="120">
+                        <materialDesign:PackIcon Kind="Account"
+                                                 Width="20" Height="20"
+                                                 Margin="0 0 10 0"/>
+                        <TextBlock Text="Клиенты"/>
+                    </StackPanel>
+                </TabItem.Header>
+            </TabItem>
+            <TabItem Tag="Store">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal" Width="120">
+                        <materialDesign:PackIcon Kind="Warehouse"
+                                                 Width="20" Height="20"
+                                                 Margin="0 0 10 0"/>
+                        <TextBlock Text="Склад"/>
+                    </StackPanel>
+                </TabItem.Header>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

@@ -20,5 +20,10 @@ namespace ServiceCenter
         {
             InitializeComponent();
         }
+
+        private void MainTabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
