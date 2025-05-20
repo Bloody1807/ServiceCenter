@@ -9,6 +9,6 @@
       Title="IssuedOrdersPage">
 
     <Grid>
-        
+        <TextBlock Text="asdsadasdas"/>
     </Grid>
 </Page>

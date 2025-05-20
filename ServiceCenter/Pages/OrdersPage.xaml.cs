@@ -24,5 +24,24 @@ namespace ServiceCenter.Pages
         {
             InitializeComponent();
         }
+
+        private void OrdersTabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (OrdersTabControl.SelectedItem is TabItem selectedTab)
+            {
+                switch (selectedTab.Tag.ToString())
+                {
+                    case "Current":
+                        OrdersFrame.Navigate(new CurrentOrdersPage());
+                        break;
+
+                    case "Issued":
+                        OrdersFrame.Navigate(new IssuedOrdersPage());
+                        break;
+
+                }
+
+            }
+        }
     }
 }

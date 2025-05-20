@@ -11,12 +11,12 @@
         Title="MainWindow" Height="720" Width="1280">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <TabControl Style="{StaticResource MaterialDesignFilledTabControl}"
                     TabStripPlacement="Left"
-                    BorderThickness="0"
+
                     x:Name="MainTabControl"
                     SelectionChanged="MainTabControl_SelectionChanged"
                     Grid.Column="0">
