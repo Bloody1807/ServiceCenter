@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ServiceCenter.Pages;
 
 namespace ServiceCenter
 {
@@ -23,7 +24,32 @@ namespace ServiceCenter
 
         private void MainTabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (MainTabControl.SelectedItem is TabItem selectedTab)
+            {
+                switch (selectedTab.Tag.ToString())
+                {
+                    case "Home":
+                        MainFrame.Navigate(new HomePage());
+                        break;
 
+                    case "Orders":
+                        MainFrame.Navigate(new OrdersPage());
+                        break;
+
+                    case "Stats":
+                        MainFrame.Navigate(new StatsPage());
+                        break;
+
+                    case "Clients":
+                        MainFrame.Navigate(new ClientsPage());
+                        break;
+
+                    case "Store":
+                        MainFrame.Navigate(new StorePage());
+                        break;
+                }
+            
+            }
         }
     }
 }
